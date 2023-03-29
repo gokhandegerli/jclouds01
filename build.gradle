@@ -1,0 +1,100 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.9'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+//    all {
+//        resolutionStrategy {
+//            force 'com.google.code.gson:gson:2.8.9'
+//        }
+//    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds
+    implementation 'org.apache.jclouds:jclouds:2.5.0'
+
+
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds
+    implementation 'org.apache.jclouds:jclouds:2.5.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds-allblobstore
+    implementation 'org.apache.jclouds:jclouds-allblobstore:2.5.0'
+
+    implementation 'org.apache.jclouds:jclouds-core:2.5.0'
+    implementation 'org.apache.jclouds.provider:aws-s3:2.5.0'
+    implementation 'org.apache.jclouds:jclouds-blobstore:2.5.0'
+
+
+    implementation 'org.apache.jclouds.api:s3:2.5.0'
+    implementation 'org.apache.jclouds.driver:jclouds-slf4j:2.5.0'
+    implementation 'org.apache.jclouds.api:filesystem:2.5.0'
+    implementation 'software.amazon.awssdk:s3:2.16.87'
+    implementation 'software.amazon.awssdk:ec2:2.16.87'
+    implementation 'software.amazon.awssdk:sts:2.16.87'
+    implementation 'com.amazonaws:aws-java-sdk-s3:1.12.13'
+    implementation 'com.amazonaws:aws-java-sdk-ec2:1.11.1025'
+    implementation 'com.amazonaws:aws-java-sdk-sts:1.11.1025'
+
+    // To remove error related to gson/guice
+    implementation 'com.google.code.gson:gson:2.8.9'
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds-gson-modules
+    implementation 'org.apache.jclouds:jclouds-gson-modules:2.2.1'
+
+
+    // https://mvnrepository.com/artifact/org.apache.jclouds.provider/google-cloud-storage
+    implementation 'org.apache.jclouds.provider:google-cloud-storage:2.5.0'
+
+    // https://mvnrepository.com/artifact/com.google.cloud/google-cloud-storage
+    implementation 'com.google.cloud:google-cloud-storage:2.20.1'
+    // https://mvnrepository.com/artifact/com.google.auth/google-auth-library-oauth2-http
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.16.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds.common/googlecloud
+    implementation 'org.apache.jclouds.common:googlecloud:2.5.0'
+    // https://mvnrepository.com/artifact/com.google.api-client/google-api-client
+    implementation 'com.google.api-client:google-api-client:2.2.0'
+    // https://mvnrepository.com/artifact/com.google.http-client/google-http-client-jackson2
+    implementation 'com.google.http-client:google-http-client-jackson2:1.43.0'
+
+
+
+    implementation 'org.apache.jclouds.api:jclouds-apis-project:2.5.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds.provider/jclouds-providers-project
+    implementation 'org.apache.jclouds.provider:jclouds-providers-project:2.5.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds.common/jclouds-commons-project
+    implementation 'org.apache.jclouds.common:jclouds-commons-project:2.5.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds-all
+    implementation 'org.apache.jclouds:jclouds-all:2.5.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds-drivers-project
+    implementation 'org.apache.jclouds:jclouds-drivers-project:2.5.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds-resources
+    implementation 'org.apache.jclouds:jclouds-resources:2.5.0'
+    // https://mvnrepository.com/artifact/org.apache.jclouds/jclouds-project
+    implementation 'org.apache.jclouds:jclouds-project:2.5.0'
+
+    implementation 'org.apache.jclouds.provider:azureblob:2.5.0'
+    // https://mvnrepository.com/artifact/com.azure/azure-core
+    implementation 'com.azure:azure-core:1.37.0'
+    implementation 'org.apache.jclouds.common:azure-common:1.8.0'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
